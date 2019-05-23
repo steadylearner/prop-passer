@@ -1,0 +1,40 @@
+{
+  "name": "prop-passer",
+  "version": "1.1.1-2",
+  "description": "React API written in FP, Don't repeat HTML, class, className etc",
+  "main": "./lib/index.js",
+  "peerDependencies": {
+    "react": "^16.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.5.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "jest": "^24.5.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "babel src -d lib --ignore src/__tests__"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/steadylearner/prop-passer.git"
+  },
+  "keywords": [
+    "react",
+    "FP",
+    "steadylearner",
+    "javascript",
+    "jsx"
+  ],
+  "author": "Steadylearner - www.steadylearner.com ",
+  "license": "MIT"
+}
