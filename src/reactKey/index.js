@@ -1,3 +1,5 @@
+// Search what does ~~ in JavaScript
+
 const key = (length = 5) => {
     {
         let charSet = "FGHIJNPQRSTUVWXYfghijpqrstuvwxy125678";
