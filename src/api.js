@@ -11,10 +11,9 @@ import { commonKeys, hasOwnProperty, pick, classWriter } from "./function";
 // propWrite and
 const propWriter = (specificProp = {}) => (sharedProp = {}) => {
 
-  // [Shadow Code]
   // If every commonKeys are not reserved, then return pick(commonProp)(specificProp);
   // otherwise, return {}
-  
+
   const reserved = ["class", "className", "rewrite"];
 
   const isReserved = (value) => {
@@ -56,10 +55,9 @@ const classReWriter = (dataType = {}) => {
       "rewrite"
     )
   ) {
-    // When you pass just rewrite inside JSX
-
     let { rewrite } = dataType;
 
+    // When you pass just rewrite inside JSX
     if (rewrite === true) {
       return {
         className: true, // No class for children elements
