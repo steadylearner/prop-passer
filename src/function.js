@@ -1,5 +1,4 @@
 import { memoizeWith, identity, pick } from "./ramda";
-// import { classWriter, hasOwnProperty } from "./classWriter";
 
 // because of key -> meoizeWith not valid?
 let commonKeys = (specificProp = {}) => (sharedProp = {}) => {
@@ -12,7 +11,7 @@ let commonKeys = (specificProp = {}) => (sharedProp = {}) => {
   return keys;
 };
 
-// only for pure function
+// memoizeWith only for pure function
 let cutLeft = (charlist = " ") => (str = "") => {
   return str.replace(new RegExp("^[" + charlist + "]+"), "");
 };

@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import {
+  Prop, // means Property
+  PropPasser, // Pass a single wrapper to each children with prop
+  Passers, // Pass the same wrappers to every children components
+  //
+  share, // share(<P title="prop-passer"/>) instead of manually writing object {title: "prop-passer"}
+  P, // The cost of using them is 70 bytes per each.
+  //
   copy, // copy, // copy element n times, for placeholders
   repeat, // repeat, // repeat function n times
-  key, // alphanumeric with xxxxx form by default, key(n)
-  pass, // similar to Passers
-  Prop, // means Property
-  PropPasser, // make wrapper to each children with prop
-  Passers // Plural of PropPasser,
+  key, // alphanumeric with xxxxx form by default, key(n)(You don't need heavyweight packages such as crypto for this.)
+  pass, // experimental API, similar to Passers
 } from "./propPasser";
 // or from "prop-passer" NPM Package
 // => They are same except showing title for the key
@@ -106,16 +110,26 @@ export default class SocialShare extends Component {
       })(15)
     });
 
-    const ShareList = Passers({
-      url,
-      title: "You can pass anything you want for React Prop",
-      className: "network__share-button",
-      // rewrite: "remove and replace existing class",
-      // rewrite: true // remove class prop,
-      style: {
-        //  opacity: 0.5 // You can use inline style instead
-      }
-    })({ className: "network" })("li");
+    const ShareList = Passers(share(<P
+      url={url}
+      className="network__share-button"
+      // style={{
+      //    opacity: 0.5 // You can use inline style instead
+      // }}
+    />))({ className: "network" })("li");
+
+    // equals to with above with 70 bytes cost in result object
+    // const ShareList = Passers({
+    //   url,
+    //   className: "network__share-button",
+    //   // rewrite: "remove and replace existing class",
+    //   // rewrite: true // remove class prop,
+    //   style: {
+    //      opacity: 0.5 // You can use inline style instead
+    //   }
+    // })({ className: "network" })("li");
+
+    // console.log(<ShareList><p>1<p/><p>2</p></ShareList>)
 
     let original = <h1>will be copied a thousand times</h1>;
     let copyExample = copy(original)(1000);
@@ -127,22 +141,22 @@ export default class SocialShare extends Component {
       // key() shouldn't be included here
       // p-xxxxx is given by default for pass and Passers
     })([
-      <span>placeholder</span>,
-      <h1>placeholder</h1>,
-      <h6>placeholder</h6>,
-      <p>placeholder</p>,
-      <p>placeholder</p>
+      <span>prop-passer</span>,
+      <h1>prop-passer</h1>,
+      <h6>prop-passer</h6>,
+      <p>prop-passer</p>,
+      <p>prop-passer</p>
       // <p>use key prop here if you want custom value</p>
     ]);
 
     // => {withpass} inside return()
 
     // equals to writing
-    // <li key="p-xxxxx"><span>placeholder</span></li>
-    // <li key="p-xxxxx"><h1>placeholder</h1></li>
-    // <li key="p-xxxxx"><h6>placeholder</h6></li>
-    // <li key="p-xxxxx"><p>placeholder</p></li>
-    // <li key="p-xxxxx"><p>placeholder</p></li>
+    // <li key="p-xxxxx"><span>prop-passer</span></li>
+    // <li key="p-xxxxx"><h1>prop-passer</h1></li>
+    // <li key="p-xxxxx"><h6>prop-passer</h6></li>
+    // <li key="p-xxxxx"><p>prop-passer</p></li>
+    // <li key="p-xxxxx"><p>prop-passer</p></li>
     // {style: { list-style: "none" } } is given by default.
     // You can use your own if you dont like default values.
 
@@ -156,7 +170,8 @@ export default class SocialShare extends Component {
             />
           </FacebookShareButton>
 
-          <TwitterShareButton title={title}>
+          <TwitterShareButton>
+          {/* <TwitterShareButton title={title}> */}
             <TwitterIcon size={"2rem"} round />
           </TwitterShareButton>
 
@@ -191,12 +206,10 @@ export default class SocialShare extends Component {
             <img
               alt="This will be shown instead alt data specified above"
               class="
-              class and className are reserved words, 
+              class and className are reserved words,
               they will have their place with existing ones.
               "
-              rewrite="
-              will remove existing ones(class or className) anyway
-              "
+              rewrite="will remove existing ones(class or className) anyway"
             />
             <img
               rewrite="thumbnail the more specific rewrite wins."

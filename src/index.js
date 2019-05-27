@@ -4,7 +4,7 @@ import { key } from "./reactKey/";
 import { cutLeft, copy, repeat } from "./function";
 // Easily copy and paste with share(<P title="prop-passer", class="steadylearner"></P>) syntax
 // instead of manually con {title: "prop-passer", class: "steadylearner"} with (share and P)
-import { share, P } from "./share"; 
+import { share, P } from "./share";
 
 import {
   propWriter, // rewrites props execpt those common in jsx of childrenProp
@@ -16,18 +16,18 @@ const { map } = Children;
 export {
   P,
   share,
-  // 
+  //
   key,
   //
-  copy, 
-  repeat, 
+  copy,
+  repeat,
 };
 
 //reactjs.org/docs/react-api.html#reactchildren
 // https: // https://www.fullstackreact.com/30-days-of-react/day-13/
 
-// We use shallow copy everywhere for this package. 
-// So don't use heavily nested object with it. 
+// We use shallow copy everywhere for this package.
+// So don't use heavily nested object with it.
 
 export const pass = (parentElement = Fragment) => (parentProp = {}) => (
   arrayOfChildren = []
@@ -105,7 +105,7 @@ export const Prop = (childrenProp = {}) =>
     );
   };
 
-// Prop + React API to make single element with prop
+// Prop + React API to make parent element with prop for children components
 export const PropPasser = (childrenProp = {}) => (parentProp = {}) => (
   parentElement = Fragment
 ) =>

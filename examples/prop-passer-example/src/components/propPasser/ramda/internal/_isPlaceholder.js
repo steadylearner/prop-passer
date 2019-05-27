@@ -1,5 +1,1 @@
-export default function _isPlaceholder(a) {
-  return (
-    a != null && typeof a === "object" && a["@@functional/placeholder"] === true
-  );
-}
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports["default"]=_isPlaceholder;function _typeof(a){return _typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&"function"==typeof Symbol&&a.constructor===Symbol&&a!==Symbol.prototype?"symbol":typeof a},_typeof(a)}function _isPlaceholder(b){return null!=b&&"object"===_typeof(b)&&!0===b["@@functional/placeholder"]}

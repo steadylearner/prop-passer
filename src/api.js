@@ -3,14 +3,14 @@ import { commonKeys, hasOwnProperty, pick, classWriter } from "./function";
 // ramda hasOwnProperty function equals to hasOwnPropertyOwnProperty with name _hasOwnProperty
 // but it is difficult to import
 
-// -> Children element can overwrite props passed
-// from parent element by specify it in JSX.
-// process order here matters.
-// Have problem with classNameWriter concat and it affects classWriter
+// Children element can overwrite props passed from parent element by specify it in JSX.
+// Process order here matters.
+// Problem with when concat classNameWriter and it affects classWriter
 
 // propWrite and
 const propWriter = (specificProp = {}) => (sharedProp = {}) => {
 
+  // [What this code does?]
   // If every commonKeys are not reserved, then return pick(commonProp)(specificProp);
   // otherwise, return {}
 
@@ -32,7 +32,7 @@ const propWriter = (specificProp = {}) => (sharedProp = {}) => {
   //   value => value !== "class" && value !== "className" && value !== "rewrite"
   // );
 
-  // We can use array syntax instead of (&& and !==) every time 
+  // We can use array syntax instead of (&& and !==) every time
 
   if (commonProp.length !== 0) {
     return pick(commonProp)(specificProp);
@@ -46,8 +46,9 @@ const classReWriter = (dataType = {}) => {
     return {};
   }
 
-  // Use some or every here with isReserved above if necessary
-  // rewrite or important
+  // You can use some or every here with isReserved above if necessary
+  // you may use rewrite, important etc also with rewrite for the same purpose
+  // (Can be functional code instead impreative code here)
 
   if (
     hasOwnProperty(
@@ -76,5 +77,9 @@ const classReWriter = (dataType = {}) => {
   return {};
 };
 
-export { propWriter, classWriter, classReWriter };
+export {
+  propWriter,
+  classWriter,
+  classReWriter
+};
 
