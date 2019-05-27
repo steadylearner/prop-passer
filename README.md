@@ -403,3 +403,8 @@ The main point of this package is to help you work less.
 1. Extract common parts from your React app after you complete it.(Less code size.)
 
 2. Define common props and wrapper components first and write React Code.(Prototype Properties and wrappers)
+
+## Note
+
+It uses shallow copy({...}) sytnax to merge props. So don't use it for heavily nested props(objects).
+(You may write own prop-passer for them if you need)
