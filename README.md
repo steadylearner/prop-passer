@@ -319,7 +319,7 @@ ___
 
 ## Experimental API(pass, withKeys, withProps)
 
-### pass
+### pass(sharedProp)([React Objects])
 
 ```js
 import React from "react";
