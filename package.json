@@ -1,7 +1,7 @@
 {
   "name": "prop-passer",
   "version": "1.1.1-2",
-  "description": "React API written in FP, Don't repeat HTML, class, className etc",
+  "description": "Write less duplicate, more readable React Code(Extract common parts easily).",
   "main": "./lib/index.js",
   "peerDependencies": {
     "react": "^16.0.0"
@@ -30,12 +30,20 @@
     "url": "https://github.com/steadylearner/prop-passer.git"
   },
   "keywords": [
+    "React",
     "react",
-    "FP",
-    "steadylearner",
     "javascript",
-    "jsx"
+    "jsx",
+    "FP",
+    "Functional Programming with React",
+    "How to extract common prop form React",
+    "Remove duplicate props React",
+    "steadylearner",
+    "www.steadylearner.com",
+    "Steadylearner",
+    "prop-passer"
   ],
   "author": "Steadylearner - www.steadylearner.com ",
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://www.steadylearner.com/blog/search/prop-passer"
 }
