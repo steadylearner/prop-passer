@@ -117,7 +117,7 @@ const ImageProp = Prop(share(<P
   alt="this will be shown"
 />));
 
-// or with manually converting JSX prop to object
+// or with manually converting JSX prop to its corresponding object
 
 // const ImageProp = Prop({
 //   src: "www.steadylearner.com/static/images/code/prop-passer.png"
