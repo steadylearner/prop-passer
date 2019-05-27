@@ -12,7 +12,7 @@ ___
 
 ![prop-passer image made by Steadylearner, www.steadylearner.com](static/images/prop-passer.png)
 
-```JavaScript
+```js
 import React from "react";
 import {
   Prop,
@@ -278,7 +278,7 @@ ___
 
 `key(10)` ➡ xxxxxxxxxx
 
-```JavaScript
+```js
 import { key } from "prop-passer";
 
 console.log(key(10)); // xxxxxxxxxx
@@ -292,7 +292,7 @@ ___
 
 ### Copy(element)(times)
 
-```JavaScript
+```js
 import "React" from "react";
 
 const image = <img src="www.steadylearner.com/static/images/code/prop-passer.png" >;
@@ -304,7 +304,7 @@ ___
 
 ### Repeat(function)(times)
 
-```JavaScript
+```js
 import { repeat } from "prop-passer";
 
 repeat(function(){ console.log("repeat api from prop-passer, show it n times")})(1000);
@@ -319,11 +319,9 @@ ___
 
 ### pass
 
-```JavaScript
+```js
 import React from "react";
-import {
-  pass,
-} from "prop-passer";
+import { pass } from "prop-passer";
 
 let withPass = pass("li")({
   // 1. Write object with props for <li> element or use share(<P />) syntax for multiple props.
