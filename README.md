@@ -4,7 +4,7 @@
 
 [![npm version](https://badge.fury.io/js/prop-passer.svg)](https://badge.fury.io/js/react-easy-md) [![npm](https://img.shields.io/npm/dt/prop-passer.svg?maxAge=2592000)]()
 
-# Prop-Passer - Extract Common Props from React
+# Prop-Passer - Less is more. Remove duplicate React codes.
 
 Extract and remove duplicate **class** names, **props** and **wrapper components** such as **li**, **div**, **section** etc to write **less React code** and make them **reusable**.(Less is more.)
 
@@ -157,7 +157,7 @@ const ImageProp = Prop(share(<P
 
 When you use `share(<P />)` instead of manually writing object, You use external 70 bytes with React API.
 
-Normall,y You won't need to care for it because prop-passer reduce byte size in the end result by removing duplicate props.
+Normally, You won't need to care for it because prop-passer reduce byte size in the end result by removing duplicate props.
 
 ___
 
