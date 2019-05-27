@@ -4,7 +4,7 @@
 
 [![npm version](https://badge.fury.io/js/prop-passer.svg)](https://badge.fury.io/js/react-easy-md) [![npm](https://img.shields.io/npm/dt/prop-passer.svg?maxAge=2592000)]()
 
-# Prop-Passer - Less is more. Remove duplicate React codes.
+# Prop-Passer - Less is more(Extract common parts)
 
 Extract and remove duplicate **class** names, **props** and **wrapper components** such as **li**, **div**, **section** etc to write **less React code** and make them **reusable**.(Less is more.)
 
