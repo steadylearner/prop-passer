@@ -2,7 +2,7 @@
 
 <!-- [![Travis branch](https://img.shields.io/travis/Steadylearner/react-marked-markdown/master.svg?maxAge=2592000)]() -->
 
-[![npm version](https://badge.fury.io/js/prop-passer.svg)](https://badge.fury.io/js/react-easy-md) [![npm](https://img.shields.io/npm/dt/prop-passer.svg?maxAge=2592000)]()
+[![npm version](https://badge.fury.io/js/prop-passer.svg)](https://badge.fury.io/js/react-easy-md) [![npm](https://img.shields.io/npm/dt/prop-passer.svg?maxAge=2592000)](https://img.shields.io/npm/dt/prop-passer.svg)
 
 <!-- NPM only allos js instead of JavaScript -->
 
