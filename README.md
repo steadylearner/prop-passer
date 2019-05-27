@@ -73,12 +73,12 @@ Exports:
 
 **`class, className, rewrite`** are reserved words to write CSS easily.
 
-  every prop you define will be substitued at more specific level. But `class` and `className` will be placed together with existing ones.
+every prop you define will be substitued at more specific level. But `class` and `className` will be used with existing ones.
 
     ex) class="this is class" className="this is className"
     ➡ className="this is class this is className"
 
-  ➡ class names used with `rewrite` will substitue existing `class` or `className` or other `rewrite` at more specific level.
+class names used with `rewrite` will substitue existing `class` or `className` or other `rewrite` at more specific level.
 
     ex) class="this is class", rewrite="this is to rewrite className"
         ➡ className="this is to rewrite className"
@@ -89,7 +89,24 @@ ___
 ### Prop(sharedProp)
 
 ```js
-// Import statements above for every example
+// This will be omitted in other examples.
+import React, { Component } from "react";
+import {
+  Prop,
+  PropPasser,
+  Passers,
+  //
+  P,
+  share
+  //
+  key,
+  //
+  copy,
+  repeat,
+  // pass,
+  // withKeys,
+  // withProps,
+} from "prop-passer";
 
 const ImageProp = Prop(share(<P
   src="www.steadylearner.com/static/images/code/prop-passer.png"
@@ -181,7 +198,7 @@ const ImagePropPasser = PropPasser(share(<P
   </section>
 ```
 
-It is just Prop and parent element for children elements.
+It is just **Prop** and parent element for children elements.
 ___
 
 ### Passers(sharedProp)(parentProp)(parentElement)
@@ -205,7 +222,8 @@ const ImagePassers = Passers(share(<P
     <ImagePassers>
   )
 
-  // equals to pass wrapper <li></li> manually and no need to define key prop manually. "prop-passer" helps you.
+  // equals to pass wrapper <li></li> manually
+  // (No need to define key manually.)
 
   <li
     class="for list"
@@ -252,14 +270,22 @@ const ImagePassers = Passers(share(<P
   </li>
 ```
 
-It is just plular version of PropPasser and you don't have to manually copy and paste wrapper elements for every children.
+It is just plular version of **PropPasser**.
+You don't have to manually copy and paste wrapper elements.
 ___
 
 ### Key(times)
 
 `key(10)` ➡ xxxxxxxxxx
 
-You can make your own alphanumeirc numbers with `key(n)` for React Components.(We don't need large dependency for that.)
+```JavaScript
+import { key } from "prop-passer";
+
+console.log(key(10)); // xxxxxxxxxx
+```
+
+You can make your own alphanumeirc numbers with `key(n)`.
+(We don't need large dependency for that.)
 
 __
 
@@ -268,24 +294,10 @@ __
 ### Copy(element)(times)
 
 ```JavaScript
-  const image = <img src="www.steadylearner.com/static/images/code/prop-passer.png" >;
+import "React" from "react";
 
-  const manyImages = copy(image)(1000);
-
-  return (
-    <section>
-      {manyImages}
-    </section>
-  )
-
-  // equals to
-
-  <section>
-    <img src="www.steadylearner.com/static/images/code/prop-passer.png" />
-    //
-    * 1000
-    //
-  </section>
+const image = <img src="www.steadylearner.com/static/images/code/prop-passer.png" >;
+copy(image)(1000); <img src="www.steadylearner.com/static/images/code/prop-passer.png" /> // * 1000
 ```
 
 Test it with string and images in your local machine.
@@ -294,7 +306,11 @@ ___
 ### Repeat(function)(times)
 
 ```JavaScript
-  repeat(function(){ console.log("repeat api from prop-passer, show it n times")})(n)
+import { repeat } from "prop-passer";
+
+repeat(function(){ console.log("repeat api from prop-passer, show it n times")})(1000);
+
+// "repeat api from prop-passer, show it n times" * 1000
 ```
 
 It show the message n times. Test in your local machine.
@@ -350,11 +366,11 @@ return(
 This is just the reverse API of **Passers**.
 ___
 
-### withKeys or withProps ([Object])(Key or prop {})
+### withKeys or withProps
 
-It will pass key or props object to React elements. For React protects key and props property name you wouldn't need it. But you can test it with array of objects to understand what prop-passer does.
-
-___
+They are to pass ey and props to every children elements.
+For React protects those property names, you wouldn't need them.
+You may test them if you want to understand what prop-passer API does.
 
 ## Read
 
@@ -369,9 +385,11 @@ ___
 1. Tests
 2. Posts
 
-## `share(<P title="prop-paser" />)` syntax or not?
+## Copy and Paste with share and P API or manually write object?
 
-You can use object when there are few props. But you can use `share(<P title="prop-passser">)` syntax so that you can just copy and paste prop parts inside the valid scope.
+You can use object when there are few props.
+But you can use `share(<P title="prop-passser">)` syntax.
+So that you can just copy and paste prop parts inside the valid scope.
 
 You can test them at **CodeSandbox**.
 
