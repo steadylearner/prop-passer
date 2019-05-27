@@ -4,6 +4,8 @@
 
 [![npm version](https://badge.fury.io/js/prop-passer.svg)](https://badge.fury.io/js/react-easy-md) [![npm](https://img.shields.io/npm/dt/prop-passer.svg?maxAge=2592000)]()
 
+<!-- NPM only allos js instead of JavaScript -->
+
 # Prop-Passer - Less is more
 
 Extract and remove duplicate **class** names, **props** and **wrapper components** such as **li**, **div**, **section** etc from React code to write **less React code** and make them **reusable**.(Less is more.)
@@ -168,7 +170,7 @@ const ImagePropPasser = PropPasser(share(<P
   src="www.steadylearner.com/static/images/code/prop-passer.png"
   class="you can use class or className"
   alt="this will be shown"
-/>))(class: "for section")("section");
+/>))({class: "for section"})("section");
 
   return (
     <ImagePropPasser>
@@ -211,7 +213,7 @@ const ImagePassers = Passers(share(<P
   onClick={function(){
     console.log("You can pass the same functions to each child elements also.")
   }}
-/>))(class: "for list")("li");
+/>))({class: "for list"})("li");
 
   return (
     <ImagePassers>
