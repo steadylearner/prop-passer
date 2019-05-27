@@ -13,7 +13,7 @@ ___
 ![prop-passer image made by Steadylearner, www.steadylearner.com](static/images/prop-passer.png)
 
 ```JavaScript
-import React, { Component } from "react";
+import React from "react";
 import {
   Prop,
   PropPasser,
@@ -91,7 +91,7 @@ ___
 
 ```js
 // This will be omitted in other examples.
-import React, { Component } from "react";
+import React from "react";
 import {
   Prop,
   PropPasser,
@@ -320,7 +320,7 @@ ___
 ### pass
 
 ```JavaScript
-import React, { Component } from "react";
+import React from "react";
 import {
   pass,
 } from "prop-passer";
