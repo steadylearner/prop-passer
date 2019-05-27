@@ -6,7 +6,7 @@
 
 # Prop-Passer - Extract Common Props from React
 
-Extract and remove duplicate class, props and wrapper components such as **li**, **div**, **section** etc to write less React code and make them reusable.
+Extract and remove duplicate **class** names, **props** and **wrapper components** such as **li**, **div**, **section** etc to write **less React code** and make them **reusable**.(Less is more.)
 
 ___
 
@@ -54,7 +54,8 @@ ___
 
  1. It is minified to save your time to do the same.
  2. `P` and `share` to help you copy and paste props from existing components.(You can use them instead of manually writing prop objects instead.)
- 3. This will be the last major update for prop-passer API.
+ 3. The main image is made by [Steadylearner](https://www.steadylearner.com).
+ 4. This will be the last major update for prop-passer API.
 
 ___
 
@@ -63,7 +64,7 @@ ___
 Exports:
 
   1. **`Prop`** ➡ passes the same prop to every children elements.
-  2. **`PropPasser`** ➡ When you want to pass prop and include a parent element also.(Prop and Sinlge parent wrapper element)
+  2. **`PropPasser`** ➡ When you want to pass prop and include a parent element also.(Prop and a parent wrapper element)
   3. **`Passers`** ➡ Plural version of PropPasser, It will pass wrapper elements with prop for every child elements.
   (Each child element has parent element with prop)
   4. **`P`** and **`share`** ➡ You can use it like `share(<P title="prop-passer"/>)` instead of manually converting `{title: "prop-passer"}` to pass props for **Prop, ProPasser and Passers**.
@@ -269,8 +270,8 @@ const ImagePassers = Passers(share(<P
   </li>
 ```
 
-It is just plular version of **PropPasser**.
-You don't have to manually copy and paste wrapper elements.
+It is just a plular version of **PropPasser**.
+You don't have to manually copy and paste wrapper elements and its props.
 ___
 
 ### Key(times)
@@ -295,7 +296,7 @@ ___
 import "React" from "react";
 
 const image = <img src="www.steadylearner.com/static/images/code/prop-passer.png" >;
-copy(image)(1000); <img src="www.steadylearner.com/static/images/code/prop-passer.png" /> // * 1000
+copy(image)(1000); // <img src="www.steadylearner.com/static/images/code/prop-passer.png" /> * 1000
 ```
 
 Test it with string and images in your local machine.
@@ -366,9 +367,9 @@ ___
 
 ### withKeys or withProps
 
-They are to pass ey and props to every children elements.
+They are to pass props to every children elements.
 For React protects those property names, you wouldn't need them.
-You may test them if you want to understand what prop-passer API does.
+Test them if you want to understand what prop-passer API does with plain objects.
 
 ## Read
 
