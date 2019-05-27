@@ -10,7 +10,7 @@ Extract duplicate class, props and wrapper components such as **li**, **div**, *
 
  ___
 
-![prop-passer](static/images/prop-passer.png)
+![prop-passer image made by Steadylearner, www.steadylearner.com](static/images/prop-passer.png)
 
 ```JavaScript
 import React, { Component } from "react";
@@ -286,8 +286,7 @@ console.log(key(10)); // xxxxxxxxxx
 
 You can make your own alphanumeirc numbers with `key(n)`.
 (We don't need large dependency for that.)
-
-__
+___
 
 ## Development API(Copy, Repeat)
 
