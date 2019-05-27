@@ -6,9 +6,9 @@
 
 # Prop-Passer - Extract Common Props from React
 
-Extract duplicate class, props and wrapper components such as **li**, **div**, **section** etc to write less React code and make them reusable.
+Extract and remove duplicate class, props and wrapper components such as **li**, **div**, **section** etc to write less React code and make them reusable.
 
- ___
+___
 
 ![prop-passer image made by Steadylearner, www.steadylearner.com](static/images/prop-passer.png)
 
@@ -73,7 +73,7 @@ Exports:
 
 **`class, className, rewrite`** are reserved words to write CSS easily.
 
-every prop you define will be substitued at more specific level. But `class` and `className` will be used with existing ones.
+every props you define will be substitued at more specific level. But `class` and `className` will be used with existing ones.
 
     ex) class="this is class" className="this is className"
     ➡ className="this is class this is className"
@@ -114,7 +114,7 @@ const ImageProp = Prop(share(<P
   alt="this will be shown"
 />));
 
-// or with manually typing object
+// or with manually converting JSX prop to object
 
 // const ImageProp = Prop({
 //   src: "www.steadylearner.com/static/images/code/prop-passer.png"
@@ -154,10 +154,9 @@ const ImageProp = Prop(share(<P
   />
 ```
 
-When you use `share(<P />)`, You use external 70 bytes.
+When you use `share(<P />)` instead of manually writing object, You use external 70 bytes with React API.
 
-Normally you won't need to care for it. Because prop-passer reduce byte size in the end result
-by removing duplicate props
+Normall,y You won't need to care for it because prop-passer reduce byte size in the end result by removing duplicate props.
 
 ___
 
@@ -381,8 +380,8 @@ You may test them if you want to understand what prop-passer API does.
 
 ## What is the next?
 
-1. Tests
-2. Posts
+1. Test
+2. Post
 
 ## Copy and Paste with share and P API or manually write object?
 
