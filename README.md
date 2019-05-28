@@ -314,7 +314,7 @@ repeat(function(){ console.log("repeat api from prop-passer, show it n times")})
 // "repeat api from prop-passer, show it n times" * 1000
 ```
 
-It show the message n times. Test in your local machine.
+It repeats the user given function. Test it in your local machine.
 ___
 
 ## Experimental API(pass, withKeys, withProps)
