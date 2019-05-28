@@ -76,12 +76,12 @@ Exports:
 
 **`class, className, rewrite`** are reserved words to write CSS easily.
 
-every props you define will be substitued at more specific level. But `class` and `className` will be used with existing ones.
+every props you define will be substituted at more specific level. But `class` and `className` will be used with existing ones.
 
     ex) class="this is class" className="this is className"
     ➡ className="this is class this is className"
 
-class names used with `rewrite` will substitue existing `class` or `className` or other `rewrite` at more specific level.
+class names used with `rewrite` will substitute existing `class` or `className` or other `rewrite` at more specific level.
 
     ex) class="this is class", rewrite="this is to rewrite className"
         ➡ className="this is to rewrite className"
