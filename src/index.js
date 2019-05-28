@@ -1,55 +1,32 @@
 // https://babeljs.io/repl
 import React, { cloneElement, createElement, Children, Fragment } from "react";
+import { P, share, withProps, withKeys } from "./share";
 import { key } from "./reactKey/";
-import { cutLeft, copy, repeat } from "./function";
+import { copy, repeat, cutLeft, } from "./function";
+
 // Easily copy and paste with share(<P title="prop-passer", class="steadylearner"></P>) syntax
 // instead of manually con {title: "prop-passer", class: "steadylearner"} with (share and P)
-import { share, P } from "./share";
 
+// They become reactCloneProp which is the main code of this package.
 import {
   propWriter, // rewrites props execpt those common in jsx of childrenProp
   classWriter,
   classReWriter
 } from "./api";
+
 const { map } = Children;
 
-export {
-  P,
-  share,
-  //
-  key,
-  //
-  copy,
-  repeat,
-};
-
-//reactjs.org/docs/react-api.html#reactchildren
+// reactjs.org/docs/react-api.html#reactchildren
 // https: // https://www.fullstackreact.com/30-days-of-react/day-13/
 
 // We use shallow copy everywhere for this package.
 // So don't use heavily nested object with it.
 
-export const pass = (parentElement = Fragment) => (parentProp = {}) => (
-  arrayOfChildren = []
-) => {
-  return arrayOfChildren.map(i => {
-    let conditionalParentProp =
-      parentElement === "li"
-        ? {
-            // title: `p-${key(5)}`, this is only for test and development
-            key: `p-${key(5)}`,
-            style: {
-              listStyle: "none"
-            },
-            ...parentProp
-          }
-        : { ...parentProp };
-    return React.createElement(parentElement, conditionalParentProp, i);
-  });
-}; // spread with Passers with li
+// spread operator will help you overwrite without specific logic,
+// even though it needs more process
 
-// spread operator will help you overwrite without specific logic, even though it needs more process
-export const reactCloneProp = (child = {}) => (childrenProp = {}) => {
+// API behind to make all prop-passer API work
+const reactCloneProp = (child = {}) => (childrenProp = {}) => {
   let x =
     cutLeft()(classWriter(child.props)(childrenProp)) === ""
       ? true
@@ -64,12 +41,12 @@ export const reactCloneProp = (child = {}) => (childrenProp = {}) => {
 };
 
 // Process order is important and also have to be filtered in propWrite
-export const reactCloneMap = (props = {}) => (childrenProp = {}) => {
+const reactCloneMap = (props = {}) => (childrenProp = {}) => {
   return map(props.children, child => reactCloneProp(child)(childrenProp));
 };
 
 // when li element is parent - pass keys to li(parent element here)
-export const reactCreateMap = (props = {}) => (childrenProp = {}) => (
+const reactCreateMap = (props = {}) => (childrenProp = {}) => (
   parentProp = {}
 ) => (parentElement = {}) => {
   return map(props.children, child => {
@@ -93,8 +70,10 @@ export const reactCreateMap = (props = {}) => (childrenProp = {}) => (
   });
 };
 
+//
+
 // Pass prop without making element
-export const Prop = (childrenProp = {}) =>
+const Prop = (childrenProp = {}) =>
   function Property(props = {}) {
     return (
       <Fragment>
@@ -106,7 +85,7 @@ export const Prop = (childrenProp = {}) =>
   };
 
 // Prop + React API to make parent element with prop for children components
-export const PropPasser = (childrenProp = {}) => (parentProp = {}) => (
+const PropPasser = (childrenProp = {}) => (parentProp = {}) => (
   parentElement = Fragment
 ) =>
   function Property(props = {}) {
@@ -119,7 +98,7 @@ export const PropPasser = (childrenProp = {}) => (parentProp = {}) => (
     );
   };
 
-export const Passers = (childrenProp = {}) => (parentProp = {}) => (
+const Passers = (childrenProp = {}) => (parentProp = {}) => (
   parentElement = Fragment
 ) =>
   function Property(props = {}) {
@@ -127,3 +106,45 @@ export const Passers = (childrenProp = {}) => (parentProp = {}) => (
       ...childrenProp
     })(parentProp)(parentElement);
   };
+
+// Reverse API of Passers
+
+const pass = (parentElement = Fragment) => (parentProp = {}) => (
+  arrayOfChildren = []
+) => {
+  return arrayOfChildren.map(i => {
+    let conditionalParentProp =
+      parentElement === "li"
+        ? {
+            // title: `p-${key(5)}`, this is only for test and development
+            key: `p-${key(5)}`,
+            style: {
+              listStyle: "none"
+            },
+            ...parentProp
+          }
+        : { ...parentProp };
+    return React.createElement(parentElement, conditionalParentProp, i);
+  });
+}; // spread with Passers with li
+
+export {
+  Prop,
+  PropPasser,
+  Passers,
+  P,
+  share,
+  //
+  key,
+  //
+  copy,
+  repeat,
+  //
+  pass,
+  withProps,
+  withKeys,
+  //
+  reactCloneProp,
+  reactCloneMap,
+  reactCreateMap,
+};
