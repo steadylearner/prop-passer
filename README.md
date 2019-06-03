@@ -14,23 +14,23 @@ ___
 
 ![prop-passer image made by Steadylearner, www.steadylearner.com](static/images/prop-passer.png)
 
+
+/
 ```js
 import {
-  Prop,
-  PropPasser,
-  Passers,
+  MarkdownInput,
+  MarkdownPreview,
   //
-  P,
-  share
-  //
-  key,
-  //
+  html,
+  markdown,
   copy,
-  repeat,
-  // pass,
-  // withKeys,
-  // withProps,
-} from "prop-passer";
+  readLocalFileWithHow,
+  saveTextFromWeb,
+  //
+  substitute,
+  // reverseSet,
+  // unsubstitute,
+} from 'react-easy-md';
 ```
 
 ___
