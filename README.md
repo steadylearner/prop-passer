@@ -14,8 +14,6 @@ ___
 
 ![prop-passer image made by Steadylearner, www.steadylearner.com](static/images/prop-passer.png)
 
-
-/
 ```js
 import {
   MarkdownInput,
