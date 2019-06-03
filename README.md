@@ -16,19 +16,21 @@ ___
 
 ```js
 import {
-  MarkdownInput,
-  MarkdownPreview,
+  Prop,
+  PropPasser,
+  Passers,
   //
-  html,
-  markdown,
+  P,
+  share
+  //
+  key,
+  //
   copy,
-  readLocalFileWithHow,
-  saveTextFromWeb,
-  //
-  substitute,
-  // reverseSet,
-  // unsubstitute,
-} from 'react-easy-md';
+  repeat,
+  // pass,
+  // withKeys,
+  // withProps,
+} from "prop-passer";
 ```
 
 ___
