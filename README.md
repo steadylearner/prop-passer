@@ -6,16 +6,15 @@
 
 <!-- NPM only allos js instead of JavaScript -->
 
-# Prop-Passer - Less is more
+# PropPasser - Less is more
 
-Extract and remove duplicate **class** names, **props** and **wrapper components** such as **li**, **div**, **section** etc from React code to write **less React code** and make them **reusable**.(Less is more.)
+Extract and remove duplicate **class** names, **props** and **wrapper components** such as **li**, **div**, **section** etc from React codes to **write less** and make them **reusable**.(Less code and the same result.)
 
 ___
 
 ![prop-passer image made by Steadylearner, www.steadylearner.com](static/images/prop-passer.png)
 
 ```js
-import React from "react";
 import {
   Prop,
   PropPasser,
@@ -55,7 +54,7 @@ ___
 ## Version Specific
 
  1. It is minified to save your time to do the same.
- 2. `P` and `share` to help you copy and paste props from existing components.(You can use them instead of manually writing prop objects instead.)
+ 2. `P` and `share` to help you copy and paste props from existing components.(You can use them instead of manually writing prop objects.)
  3. The main image is made by [Steadylearner](https://www.steadylearner.com).
  4. This will be the last major update for prop-passer API.
 
@@ -120,7 +119,7 @@ const ImageProp = Prop(share(<P
 // or with manually converting JSX prop to its corresponding object
 
 // const ImageProp = Prop({
-//   src: "www.steadylearner.com/static/images/code/prop-passer.png"
+//   src: "www.steadylearner.com/static/images/code/prop-passer.png",
 //   class: "you can use class or className",
 //   alt: "this will be shown",
 // });
